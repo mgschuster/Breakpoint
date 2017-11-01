@@ -483,7 +483,7 @@
         <!--Group FeedVC-->
         <scene sceneID="QBI-Xe-U10">
             <objects>
-                <viewController id="xov-jI-IPx" customClass="GroupFeedVC" customModule="Breakpoint" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GroupFeedVC" id="xov-jI-IPx" customClass="GroupFeedVC" customModule="Breakpoint" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jr6-pu-Nef">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -636,6 +636,7 @@
                     </view>
                     <connections>
                         <outlet property="groupTitleLbl" destination="TXh-Wa-bjG" id="kAp-wI-unt"/>
+                        <outlet property="membersLbl" destination="EED-mp-iEY" id="cSw-Rl-8Rf"/>
                         <outlet property="messageTextField" destination="qrQ-dx-yTa" id="2TV-c6-r7b"/>
                         <outlet property="sendBtn" destination="APy-e1-rbz" id="3yZ-HH-rrx"/>
                         <outlet property="sendBtnView" destination="acC-gY-vkO" id="Bmf-JX-GAw"/>
