@@ -28,6 +28,8 @@ class CreateGroupsVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         emailSearchTextField.delegate = self
+        descriptionTextField.delegate = self
+        titleTextField.delegate = self
         emailSearchTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
     }
     
@@ -108,5 +110,12 @@ extension CreateGroupsVC: UITableViewDelegate, UITableViewDataSource {
                 doneBtn.isHidden = true
             }
         }
+    }
+}
+
+extension CreateGroupsVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 }
