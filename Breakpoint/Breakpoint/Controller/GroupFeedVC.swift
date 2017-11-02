@@ -31,6 +31,7 @@ class GroupFeedVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         mainView.bindToKeyboard()
+        messageTextField.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -56,7 +57,7 @@ class GroupFeedVC: UIViewController {
     
     // Actions
     @IBAction func backBtnWasPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        dismissDetail()
     }
     
     @IBAction func sendBtnWasPressed(_ sender: Any) {
@@ -91,5 +92,12 @@ extension GroupFeedVC: UITableViewDelegate, UITableViewDataSource {
             cell.configureCell(profileImage: UIImage(named: "defaultProfileImage")!, email: email, content: message.content)
         }
         return cell
+    }
+}
+
+extension GroupFeedVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 }
